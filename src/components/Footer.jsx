@@ -18,31 +18,31 @@ function Footer() {
                 <div className="footer-group">
                     <h3 className="h5">Contactează-mă:</h3>
                     <p className="m-0">
-                        <a href="mailto:razvan.cirlugea@gmail.com">
+                        <a href="mailto:horlescu_dana@yahoo.com">
                             <Mail className="mr-1 mb-1 footer-icon"/>
-                            razvan.cirlugea@gmail.com
+                            horlescu_dana@yahoo
                         </a>
                     </p>
-                    <p className="m-0"><Phone className="mr-1 footer-icon"/>+40722228282</p>
+                    <p className="m-0"><Phone className="mr-1 footer-icon"/>+40722429732</p>
                 </div>
                 <div className="footer-group">
                     <h3 className="h5">Contactează-mă:</h3>
                     <p className="m-0">
-                        <a href="https://github.com/razvancir96">
+                        <a href="https://github.com/Dana2025">
                             <GitHub className="mr-1 mb-1 footer-icon"/>
-                            razvancir96
+                            Dana2025
                         </a>
                     </p>
                     <p className="m-0">
-                        <a href="https://www.linkedin.com/in/razvancirlugea/">
+                        <a href="https://www.linkedin.com/in/butnariu-daniela-66419a16a/">
                             <LinkedIn className="mr-1 footer-icon"/>
-                            razvancirlugea
+                            butnariudaniela
                         </a>
                     </p>
                 </div>
             </div>
             <div className="text-center py-3">
-                &copy; Răzvan Cîrlugea, 2019
+                &copy; Butnariu Daniela, 2022
             </div>
         </footer>
     );
