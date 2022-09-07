@@ -1,9 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout/Layout';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { removeFromFavorites } from '../redux/favorites/FavoritesActions'
-import { ReactComponent as Close} from '../assets/icons/close.svg'
+import { removeFromFavorites } from '../../redux/favorites/FavoritesActions'
+import { ReactComponent as Close} from '../../assets/icons/close.svg'
 
 
 function Favorites(props) {

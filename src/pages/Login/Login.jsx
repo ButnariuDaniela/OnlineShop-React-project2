@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo_200x200.png';
-import { ReactComponent as Google } from '../assets/icons/google.svg';
-import { ReactComponent as Facebook } from '../assets/icons/facebook.svg'
+import Logo from '../../assets/images/logo_200x200.png';
+import { ReactComponent as Google } from '../../assets/icons/google.svg';
+import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg'
 import './Login.css'
 import { connect } from 'react-redux';
-import { loginUser, loginUserF } from '../redux/user/UserActions';
+import { loginUser, loginUserF } from '../../redux/user/UserActions';
 
 class Login extends React.Component {
 
