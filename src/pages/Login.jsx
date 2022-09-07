@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logo_200x200.png';
 import { ReactComponent as Google } from '../assets/icons/google.svg';
+import { ReactComponent as Facebook } from '../assets/icons/facebook.svg'
 import './Login.css'
 import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions/user';
+import { loginUser, loginUserF } from '../redux/user/UserActions';
 
 class Login extends React.Component {
 
@@ -15,6 +16,7 @@ class Login extends React.Component {
     }
 
     render() {
+
         return(
             <div className="login-page">
                 <Link to='/'>
@@ -31,6 +33,14 @@ class Login extends React.Component {
                     <Google className="w-50 mr-3"/>
                     <span className="text-nowrap">Loghează-te cu Google</span>
                 </button>
+                <br />
+                <button
+                    className="btn btn-outline-dark d-flex align-items-center"
+                    onClick={() => this.props.signInWithFacebook()}
+                >
+                    <Facebook className="w-50 mr-3"/>
+                    <span className="text-nowrap">Loghează-te cu Facebook</span>
+                </button>
             </div>
         );
     }
@@ -44,7 +54,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        signInWithGoogle: () => dispatch(loginUser())
+        signInWithGoogle: () => dispatch(loginUser()),
+        signInWithFacebook: () => dispatch(loginUserF())
     }
 }
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { connect } from 'react-redux';
-import { removeFromCart } from '../redux/actions/cart';
+import { removeFromCart } from '../redux/cart/CartActions';
 import { Link } from 'react-router-dom';
 import './Cart.css';
 import { ReactComponent as Close} from '../assets/icons/close.svg';
 
 function Cart(props) {
+    console.log(props)
     const totalSum = (products) => {
         return products.reduce((acc, product) => {
             return acc + product.quantity * product.price;

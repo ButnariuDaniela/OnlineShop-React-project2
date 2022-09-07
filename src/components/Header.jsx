@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/images/logo_200x200.png';
 import { ReactComponent as ShoppingCart } from '../assets/icons/shopping-cart.svg';
+import { ReactComponent as Favorite } from '../assets/icons/favorites.svg';
 import './Header.css';
 import { connect } from 'react-redux';
-import { logoutUser } from '../redux/actions/user';
+import { logoutUser } from '../redux/user/UserActions';
 
 function Header(props) {
+    console.log(props)
     return(
         <header className="border-bottom mb-3">
             <div className="container-fluid container-min-max-width d-flex justify-content-between align-items-center">
@@ -23,7 +25,13 @@ function Header(props) {
                             ? <p className="logout h5" onClick={() => props.signOut()}>Delogare</p>
                             : <Link to="/login" className="h5 mb-0">Logare</Link>
                         }
-                        <div className="d-flex align-items-center">
+                        <div  className="d-flex align-items-center">
+                            <Link to="/favorites" className="d-flex">
+                                <Favorite className='m1-2'/>
+                                <p className="ml-1 mb-0">{ props.numberOfFavorites }</p>
+                            </Link>
+                        </div>
+                        <div  className="d-flex align-items-center">
                             <Link to="/cart" className="d-flex">
                                 <ShoppingCart className="ml-2"/>
                                 <p className="ml-1 mb-0">{ props.numberOfProducts }</p>
@@ -39,6 +47,7 @@ function Header(props) {
 function mapStateToProps(state) {
     return {
         numberOfProducts: state.cart.products.length,
+        numberOfFavorites: state.favorites.favoritesProducts.length,
         user: state.user.data
     }
 }
