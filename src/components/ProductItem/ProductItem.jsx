@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addToCart } from '../../redux/cart/CartActions';
 import { addToFavorites } from '../../redux/favorites/FavoritesActions';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Favorite } from '../../assets/icons/favorites.svg';
 
 function ProductItem(props) {
     // console.log(props)
@@ -16,34 +17,36 @@ function ProductItem(props) {
                 <p className="mb-1 text-center">{ name }</p>
                 <p className="text-center">{ price + currency }</p>
             </Link>
-            <button
-                className="btn btn-outline-dark"
-                onClick={() => props.addToCart({
-                    product: {
-                        id,
-                        name,
-                        price,
-                        currency,
-                        image
-                    }
-                })}
-            >
-                Adaugă în coș
-            </button>
-            <button
-                className="btn btn-outline-dark"
-                onClick={() => props.addToFavorites({
-                    productF: {
-                        id,
-                        name,
-                        price,
-                        currency,
-                        image
-                    }
-                })}
-            >
-                Adaugă la favorite
-            </button>
+            <div>
+                <button
+                    className="btn btn-outline-dark mr-2"
+                    onClick={() => props.addToCart({
+                        product: {
+                            id,
+                            name,
+                            price,
+                            currency,
+                            image
+                        }
+                    })}
+                >
+                    Adaugă în coș
+                </button>
+                <button
+                    className="btn btn-outline-dark"
+                    onClick={() => props.addToFavorites({
+                        productF: {
+                            id,
+                            name,
+                            price,
+                            currency,
+                            image
+                        }
+                    })}
+                >
+                    <Favorite className='m1-2'/>
+                </button>
+            </div>
         </div>
     );
 }
