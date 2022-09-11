@@ -5,18 +5,22 @@ import './Product.css';
 import { connect } from 'react-redux';
 import { addToCart } from '../../redux/cart/CartActions';
 import { addToFavorites } from '../../redux/favorites/FavoritesActions';
+import { ReactComponent as Favorite } from '../../assets/icons/favorites.svg';
 
 class Product extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            product: {}
+            product: {},
+            idsFavorites: []
         }
     }
 
     componentDidMount() {
-        console.log(this.props)
+        // console.log(this.props)
         const { match } = this.props;
+        const idsFavorites = this.props.favoritesProducts.map((product) => product.id).sort();
+        this.setState({idsFavorites: idsFavorites})
         const productId = match.params.productId;
         const categoryValues = Object.values(products);
         const productItems = categoryValues.reduce((acc, category) => {
@@ -25,7 +29,6 @@ class Product extends React.Component {
                 ...category.items
             ]
         }, []);
-        // console.log(productItems)
         const currentProduct = productItems.find(product => {
             return Number(productId) === product.id;
         });
@@ -34,7 +37,7 @@ class Product extends React.Component {
 
     render() {
         const { product } = this.state;
-        console.log(this.state)
+        const isInFavorites = this.state.idsFavorites.includes(this.state.product.id);
 
         return (
             <Layout>
@@ -47,7 +50,7 @@ class Product extends React.Component {
                         <div className="product-details">
                             <p className="h3 text-danger">{product.price} {product.currency}</p>
                             <button
-                                className="btn btn-dark mb-4 font-weight-bold"
+                                className="btn btn-dark mb-4 mr-4 font-weight-bold"
                                 onClick={() => {
                                     this.props.addToCart({
                                         product: {
@@ -62,9 +65,12 @@ class Product extends React.Component {
                             >
                                 Adaugă în coș
                             </button>
-                            <button
-                                className="btn btn-dark mb-4 font-weight-bold"
+                            {isInFavorites
+                                ? <div></div>
+                                :  <button
+                                className="btn btn-outline-dark mb-4"
                                 onClick={() => {
+                                    this.props.favoritesProducts.push(product.id)
                                     this.props.addToFavorites({
                                         productF: {
                                             id: product.id,
@@ -75,9 +81,11 @@ class Product extends React.Component {
                                         }
                                     })
                                 }}
-                            >
-                                Adaugă la favorite
-                            </button>
+                                    >
+                                        <Favorite className='m1-2'/>
+                                    </button>
+                                }
+                           
                             <p><span className="font-weight-bold">Mărime</span>: {product.size}</p>
                             <p><span className="font-weight-bold">Culoare</span>: {product.colour}</p>
                             <p><span className="font-weight-bold">Material</span>: {product.material}</p>
@@ -92,11 +100,19 @@ class Product extends React.Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        addToCart: (payload) => dispatch(addToCart(payload)),
-        addToFavorites: (payload) => dispatch(addToFavorites(payload))
+function mapStateToProps(state) {
+    return{
+        favoritesProducts: state.favorites.favoritesProducts,
+        isInFavorites: this.isInFavorites
     }
 }
 
-export default connect(null, mapDispatchToProps)(Product);
+function mapDispatchToProps(dispatch) {
+    return {
+        addToCart: (payload) => dispatch(addToCart(payload)),
+        addToFavorites: (payload) => dispatch(addToFavorites(payload)),
+        
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
