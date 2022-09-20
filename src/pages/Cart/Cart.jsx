@@ -7,7 +7,6 @@ import './Cart.css';
 import { ReactComponent as Close} from '../../assets/icons/close.svg';
 
 function Cart(props) {
-    console.log(props)
     const totalSum = (products) => {
         return products.reduce((acc, product) => {
             return acc + product.quantity * product.price;

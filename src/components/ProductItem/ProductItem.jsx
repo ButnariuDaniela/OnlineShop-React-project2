@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Favorite } from '../../assets/icons/favorites.svg';
 
 function ProductItem(props) {
-    // console.log(props)
     const {name, price, currency, image, id} = props;
 
     return(
@@ -34,7 +33,9 @@ function ProductItem(props) {
                 </button>
                 <button
                     className="btn btn-outline-dark"
-                    onClick={() => props.addToFavorites({
+                    id={`button-favorite ${id}`}
+                    onClick={() => 
+                        {props.addToFavorites({
                         productF: {
                             id,
                             name,
@@ -42,7 +43,8 @@ function ProductItem(props) {
                             currency,
                             image
                         }
-                    })}
+                    })
+                }}
                 >
                     <Favorite className='m1-2'/>
                 </button>

@@ -17,7 +17,6 @@ class Product extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props)
         const { match } = this.props;
         const idsFavorites = this.props.favoritesProducts.map((product) => product.id).sort();
         this.setState({idsFavorites: idsFavorites})
@@ -35,6 +34,10 @@ class Product extends React.Component {
         this.setState({product: currentProduct});
     }
 
+    disableButton(product) {
+        document.getElementById(`button-favorites`).disabled = true;
+    }
+
     render() {
         const { product } = this.state;
         const isInFavorites = this.state.idsFavorites.includes(this.state.product.id);
@@ -44,9 +47,8 @@ class Product extends React.Component {
                 <div className="product-page container-fluid container-min-max-width">
                     <h1 className="my-5 h2">{product.name}</h1>
                     <div className="product-info d-flex">
-                        <div className="image-wrapper d-flex mr-5">
-                            <img src={product.image} alt="Product presentation"/>
-                        </div>
+                        <div className="d-flex mr-5">
+                            <img className='image-wrapper mr-5'src={product.image} alt="Product presentation"/>
                         <div className="product-details">
                             <p className="h3 text-danger">{product.price} {product.currency}</p>
                             <button
@@ -69,8 +71,9 @@ class Product extends React.Component {
                                 ? <div></div>
                                 :  <button
                                 className="btn btn-outline-dark mb-4"
+                                id={`button-favorites`}
                                 onClick={() => {
-                                    this.props.favoritesProducts.push(product.id)
+                                    // this.props.favoritesProducts.push(product.id)
                                     this.props.addToFavorites({
                                         productF: {
                                             id: product.id,
@@ -79,7 +82,8 @@ class Product extends React.Component {
                                             currency: product.currency,
                                             image: product.image
                                         }
-                                    })
+                                    });
+                                    this.disableButton();
                                 }}
                                     >
                                         <Favorite className='m1-2'/>
@@ -92,6 +96,7 @@ class Product extends React.Component {
                             <p><span className="font-weight-bold">Brand</span>: {product.brand}</p>
                             <p className="font-weight-bold mb-1">Descriere:</p>
                             <p>{product.description}</p>
+                        </div>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,6 @@ export function userReducer(state = initialState, action) {
                 loading: true
             });
         case 'UPDATE_USER_DATA':
-            // console.log(state)
             return Object.assign({}, state, {
                 data: action.payload,
                 loading: false,

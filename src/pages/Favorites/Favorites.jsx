@@ -7,7 +7,6 @@ import { ReactComponent as Close} from '../../assets/icons/close.svg'
 
 
 function Favorites(props) {
-    console.log(props.favoritesProducts.length)
   return (
     
     <Layout>

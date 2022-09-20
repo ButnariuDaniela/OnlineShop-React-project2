@@ -2,7 +2,6 @@ import { actionAdd, actionRemove } from './FavoritesConstants';
 
 
 export function addToFavorites(payload) {
-    // console.log(payload)
     return {
         type: actionAdd,
         payload

@@ -3,8 +3,6 @@ const initialState = {
 }
 
 export function cartReducer(state = initialState, action) {
-    // console.log(state)
-    // console.log(action.payload)
     switch (action.type) {
         case 'ADD_TO_CART':
             let productInCart = false;

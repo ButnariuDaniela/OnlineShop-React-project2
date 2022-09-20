@@ -1,7 +1,7 @@
 /* CSS-ul pentru pagina de produs */
 .product-page .image-wrapper {
     width: 400px;
-    height: 400px;
+    height: 200px;
     /* ATENTIE! Am sters clasa de bootstrap din Product.js(justify-content-center), intrucat
     ea se punea cu !important si nu mai putea fi suprascrisa de stilizarea pe mobile! */
     /* In sachimb, avem proprietatea justify-content cu doua valori: una aici si una la @media */
@@ -10,6 +10,7 @@
 
 .product-page .image-wrapper img {
     height: 100%;
+    width: auto;
 }
 
 /* Stilizarea pe mobile */

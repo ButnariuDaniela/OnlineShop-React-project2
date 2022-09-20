@@ -3,12 +3,9 @@ const initialState = {
 }
 
 export function favoritesReducer(state = initialState, action) {
-    // console.log(state)
-    // console.log(action.payload)
     switch (action.type) {
         case 'ADD_TO_FAVORITES':
             let productInFavorites = false;
-            console.log(state.favoritesProducts)
             const updatedFavoritesProducts = state.favoritesProducts.map(product => {
                  if (product.id === action.payload.productF.id) {
                      productInFavorites = true;
