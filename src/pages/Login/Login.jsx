@@ -17,10 +17,10 @@ class Login extends React.Component {
 
     render() {
 
-        return(
+        return (
             <div className="login-page">
                 <Link to='/'>
-                    <img src={Logo} alt="logo" className="mb-5"/>
+                    <img src={Logo} alt="logo" className="mb-5" />
                 </Link>
 
                 <h1 className="h2">Login</h1>
@@ -30,7 +30,7 @@ class Login extends React.Component {
                     className="btn btn-outline-dark d-flex align-items-center"
                     onClick={() => this.props.signInWithGoogle()}
                 >
-                    <Google className="w-50 mr-3"/>
+                    <Google className="w-50 mr-3" />
                     <span className="text-nowrap">Loghează-te cu Google</span>
                 </button>
                 <br />
@@ -38,7 +38,7 @@ class Login extends React.Component {
                     className="btn btn-outline-dark d-flex align-items-center"
                     onClick={() => this.props.signInWithFacebook()}
                 >
-                    <Facebook className="w-50 mr-3"/>
+                    <Facebook className="w-50 mr-3" />
                     <span className="text-nowrap">Loghează-te cu Facebook</span>
                 </button>
             </div>

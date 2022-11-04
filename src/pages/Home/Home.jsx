@@ -3,7 +3,7 @@ import Layout from '../../components/Layout/Layout';
 import products from '../../utils/products.json';
 import HomeCategory from '../../components/HomeCategory/HomeCategory';
 
-class Home extends React.Component{
+class Home extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -13,11 +13,11 @@ class Home extends React.Component{
 
     componentDidMount() {
         const categories = Object.keys(products);
-        this.setState({categories});
+        this.setState({ categories });
     }
 
     render() {
-        return(
+        return (
             <Layout>
                 <div className="container-fluid container-min-max-width">
                     <div className="row">

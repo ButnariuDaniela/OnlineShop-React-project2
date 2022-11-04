@@ -1,4 +1,14 @@
 .container-min-max-width {
-    min-width: 320px;
-    max-width: 1200px;
+  min-width: 320px;
+  max-width: 1200px;
+}
+
+.fav-col {
+  background-color: #2e4750 !important;
+  color: #f3f3f4;
+  border-color: #2e4750 !important;
+}
+
+.fav-col-text {
+  color: #3789a7;
 }

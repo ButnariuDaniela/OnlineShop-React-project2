@@ -1,0 +1,10 @@
+{
+    "data":[
+        {"itemImageSrc": "https://i.imgur.com/qNlMksG.jpeg","thumbnailImageSrc": "https://i.imgur.com/qNlMksG.jpeg","alt": "Echilibru, armonie, rafinament...","title": "Clasic"},
+        {"itemImageSrc": "https://i.imgur.com/tU5WGFE.jpeg","thumbnailImageSrc": "https://i.imgur.com/tU5WGFE.jpeg","alt": "Description for Image 2","title": "Standard"},
+        {"itemImageSrc": "https://i.imgur.com/83Bb4Ug.png","thumbnailImageSrc": "https://i.imgur.com/83Bb4Ug.png","alt": "Description for Image 3","title": "Modern"},
+        {"itemImageSrc": "https://i.imgur.com/qvvkdnE.jpeg","thumbnailImageSrc": "https://i.imgur.com/qvvkdnE.jpeg","alt": "Description for Image 4","title": "Avangard"},
+        {"itemImageSrc": "https://i.imgur.com/MvQE0x4.png","thumbnailImageSrc": "https://i.imgur.com/MvQE0x4.png","alt": "Description for Image 5","title": "Country"},
+        {"itemImageSrc": "https://i.imgur.com/BHVAUIM.jpeg","thumbnailImageSrc": "https://i.imgur.com/BHVAUIM.jpeg","alt": "Description for Image 6","title": "Antichizate"}
+    ]
+}

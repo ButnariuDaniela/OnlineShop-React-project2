@@ -1,9 +1,9 @@
 header .logo {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 
 header .logout:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  cursor: pointer;
+  text-decoration: underline;
 }

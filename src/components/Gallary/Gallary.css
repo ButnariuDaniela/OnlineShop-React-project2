@@ -1,9 +1,9 @@
-.layout {
+.layoutG {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.layout {
+.layoutG > div {
   flex-grow: 1;
 }

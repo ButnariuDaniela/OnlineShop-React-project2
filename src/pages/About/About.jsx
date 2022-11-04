@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../../components/Layout/Layout';
 
 function About() {
-    return(
+    return (
         <div>
             <Layout>
                 <div className='container content'>
@@ -27,7 +27,7 @@ function About() {
                                     Fii partenerul nostru!
                                 </p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
